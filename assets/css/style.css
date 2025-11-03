@@ -9,6 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'Lato', sans-serif;
+    min-height: 100vh;
 }
 
 main {
@@ -16,12 +17,13 @@ main {
 }
 
 .card {
-    margin-bottom: var(--space-2);
+    margin-bottom: calc(var(--space-2) * 1.5);
     border-radius: var(--radius-md);
     transition: transform 0.2s;
     box-shadow: var(--shadow-md);
     background-color: var(--background-color);
     border: 1px solid var(--primary-color);
+    animation: slideIn 0.6s ease-out;
 }
 
 .card:hover {
@@ -46,8 +48,21 @@ main {
     }
 }
 
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .container {
-    max-width: var(--maxw);
+    max-width: calc(var(--maxw) - 2rem);
+    padding: calc(var(--space-2) * 2);
     animation: fadeIn 1s;
 }
 
@@ -64,6 +79,8 @@ h1, h2, h3, h4, h5, h6 {
 footer {
     background-color: var(--primary-color);
     color: var(--background-color);
+    padding: calc(var(--space-2) * 1.5);
+    margin-top: calc(var(--space-3) * 2);
 }
 
 .chat-container {
@@ -133,61 +150,119 @@ footer {
     justify-content: space-between;
     align-items: center;
     background-color: var(--primary-color);
-    padding: var(--space-2);
+    padding: calc(var(--space-1) * 2);
+    position: relative;
 }
 
 .navbar-brand {
     color: white;
     font-weight: bold;
+    text-decoration: none;
 }
 
-#menu-toggle {
+.menu-toggle {
     display: none;
 }
 
-.navbar-toggler {
+.hamburger {
     display: none;
+    flex-direction: column;
     cursor: pointer;
-    border: 1px solid white;
-    border-radius: var(--radius-sm);
-    padding: var(--space-1);
+    gap: calc(var(--space-1) / 2);
 }
 
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+    border-radius: 2px;
 }
 
-.menu {
+.nav-menu {
     display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--space-2);
 }
 
-.nav-link {
+.nav-menu a {
     color: white;
-    margin-left: var(--space-2);
+    text-decoration: none;
+    padding: var(--space-1);
+    transition: opacity 0.2s;
 }
 
-@media (max-width: 768px) {
-    .navbar-toggler {
-        display: block;
+.nav-menu a:hover {
+    opacity: 0.8;
+}
+
+@media (min-width: 480px) {
+    .container {
+        padding: calc(var(--space-2) * 2.5);
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        padding: calc(var(--space-2) * 1.5);
     }
 
-    .menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        background-color: var(--primary-color);
-        padding: var(--space-2);
+    .container {
+        max-width: calc(var(--maxw) - 4rem);
     }
+}
 
-    #menu-toggle:checked ~ .menu {
+@media (max-width: 767px) {
+    .hamburger {
         display: flex;
     }
 
-    .nav-link {
-        margin-left: 0;
-        margin-bottom: var(--space-1);
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        padding: var(--space-2);
+        gap: 0;
+    }
+
+    .nav-menu a {
+        padding: calc(var(--space-1) * 1.5);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .menu-toggle:checked ~ .nav-menu {
+        display: flex;
+    }
+
+    .menu-toggle:checked ~ .hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle:checked ~ .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked ~ .hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: var(--maxw);
+    }
+
+    .navbar {
+        padding: calc(var(--space-2) * 2);
+    }
+
+    .nav-menu {
+        gap: calc(var(--space-2) * 1.5);
     }
 }
