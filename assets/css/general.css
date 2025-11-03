@@ -1,0 +1,47 @@
+/* Buttons */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: var(--space-1) var(--space-2);
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: var(--radius-sm);
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #825f58;
+    border-color: #825f58;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    color: #fff;
+    background-color: #154074;
+    border-color: #154074;
+}
+
+/* Rounded images */
+.img-rounded {
+    border-radius: var(--radius-lg);
+}
