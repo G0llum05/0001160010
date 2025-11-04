@@ -238,11 +238,11 @@ footer {
     background-color: var(--primary-color);
     padding: var(--space-2);
     gap: 0;
+    z-index: 1000;
   }
 
   .nav-menu a {
     padding: calc(var(--space-1) * 1.5);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .menu-toggle:checked~.nav-menu {
