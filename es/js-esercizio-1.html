@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Esercizio JavaScript 1: Sequenza di Fibonacci con array e funzioni">
+    <title>JS Esercizio 1 - Fibonacci | TW Exercises</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/exercise.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="navbar-brand" href="../index.html">TW Exercises</a>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            
+            <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../risorse.html">Risorse</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../chat.html">Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="../tema/javascript.html">JavaScript</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Esercizio 1</li>
+            </ol>
+        </nav>
+
+        <article class="exercise-header">
+            <h1 class="exercise-title">Esercizio 1: Sequenza di Fibonacci</h1>
+            <div class="exercise-meta">
+                <span class="badge-difficulty badge-medio">Medio</span>
+                <span>⏱️ Durata: 75 minuti</span>
+                <span>📚 Prerequisiti: HTML, concetti base di programmazione</span>
+            </div>
+        </article>
+
+        <section class="keywords-section">
+            <h2>Keywords</h2>
+            <div class="keywords-list">
+                <span class="keyword-tag">JS basics</span>
+                <span class="keyword-tag">arrays</span>
+                <span class="keyword-tag">functions</span>
+                <span class="keyword-tag">fibonacci</span>
+                <span class="keyword-tag">loops</span>
+            </div>
+        </section>
+
+        <section class="exercise-section">
+            <h2>🎯 Obiettivi di Apprendimento</h2>
+            <ul class="objectives-list">
+                <li>Comprendere le basi della sintassi JavaScript</li>
+                <li>Creare e utilizzare funzioni</li>
+                <li>Lavorare con array (creazione, accesso, push)</li>
+                <li>Implementare loop for</li>
+                <li>Utilizzare condizioni if/else</li>
+                <li>Interagire con il DOM (getElementById, innerHTML)</li>
+                <li>Gestire eventi onclick</li>
+            </ul>
+        </section>
+
+        <section class="exercise-section">
+            <h2>📖 Teoria</h2>
+            
+            <h3>Booleani e Condizioni</h3>
+            <p>I booleani sono valori che possono essere <code>true</code> o <code>false</code>. Si usano per controllare il flusso del programma:</p>
+            <pre><code>var x = 5;
+if (x < 10) {
+  console.log("x è minore di 10");
+} else {
+  console.log("x è maggiore o uguale a 10");
+}</code></pre>
+
+            <h3>Operatori di Confronto</h3>
+            <table style="border-collapse: collapse; width: 100%; margin: 1rem 0;">
+                <thead>
+                    <tr style="background-color: var(--secondary-color); color: white;">
+                        <th style="border: 1px solid #ddd; padding: 8px;">Operatore</th>
+                        <th style="border: 1px solid #ddd; padding: 8px;">Descrizione</th>
+                        <th style="border: 1px solid #ddd; padding: 8px;">Esempio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;"><code>==</code></td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Uguale a</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;"><code>5 == "5" // true</code></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;"><code>===</code></td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Uguale in valore e tipo</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;"><code>5 === "5" // false</code></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;"><code>!=</code></td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Diverso</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;"><code>5 != 3 // true</code></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;"><code>&lt;</code>, <code>&gt;</code></td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Minore, maggiore</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;"><code>5 &lt; 10 // true</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Loop For</h3>
+            <p>Il loop for esegue ripetutamente un blocco finché una condizione è vera:</p>
+            <pre><code>for (var i = 0; i < 10; i++) {
+  console.log(i); // stampa 0, 1, 2, ..., 9
+}</code></pre>
+
+            <h3>Array</h3>
+            <p>Gli array sono liste di valori:</p>
+            <pre><code>var numeri = [1, 2, 3, 4, 5];
+console.log(numeri[0]); // 1
+console.log(numeri.length); // 5
+numeri.push(6); // aggiunge 6 alla fine</code></pre>
+
+            <h3>La Sequenza di Fibonacci</h3>
+            <p>Nella sequenza di Fibonacci, ogni numero è la somma dei due precedenti:</p>
+            <p><strong>0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...</strong></p>
+            <pre><code>// Esempio: fibonacci(5) = [0, 1, 1, 2, 3]
+// Calcolo:
+// - Inizia con [0, 1]
+// - 0 + 1 = 1 → [0, 1, 1]
+// - 1 + 1 = 2 → [0, 1, 1, 2]
+// - 1 + 2 = 3 → [0, 1, 1, 2, 3]</code></pre>
+
+            <div class="prerequisites-section">
+                <h3>💡 Suggerimento</h3>
+                <p>Per accedere all'ultimo elemento di un array: <code>array[array.length - 1]</code><br>
+                Per il penultimo: <code>array[array.length - 2]</code></p>
+            </div>
+        </section>
+
+        <section class="exercise-section">
+            <h2>✏️ Esercizio 1: Funzione Fibonacci</h2>
+            <p>Crea una funzione <code>fibonacci(n)</code> che ritorna un array con i primi <em>n</em> numeri di Fibonacci.</p>
+
+            <h3>Requisiti:</h3>
+            <ul>
+                <li>Se <code>n === 1</code>, ritorna <code>[0]</code></li>
+                <li>Se <code>n === 2</code>, ritorna <code>[0, 1]</code></li>
+                <li>Se <code>n > 2</code>, calcola i numeri successivi come somma degli ultimi due</li>
+            </ul>
+
+            <h3>Esempi:</h3>
+            <pre><code>fibonacci(1)  // [0]
+fibonacci(2)  // [0, 1]
+fibonacci(5)  // [0, 1, 1, 2, 3]
+fibonacci(8)  // [0, 1, 1, 2, 3, 5, 8, 13]</code></pre>
+
+            <h3>Struttura da seguire:</h3>
+            <pre><code>function fibonacci(n) {
+  // Se n è 1, ritorna [0]
+  if (n === 1) {
+    return [0];
+  }
+  
+  // Se n è 2, ritorna [0, 1]
+  if (n === 2) {
+    return [0, 1];
+  }
+  
+  // Inizializza l'array con [0, 1]
+  var result = [0, 1];
+  
+  // Loop da 2 a n-1
+  for (var i = 2; i < n; i++) {
+    // Calcola il prossimo numero come somma degli ultimi due
+    var next = result[result.length - 1] + result[result.length - 2];
+    // Aggiungi all'array
+    result.push(next);
+  }
+  
+  return result;
+}</code></pre>
+        </section>
+
+        <section class="exercise-section">
+            <h2>✏️ Esercizio 2: Interfaccia HTML</h2>
+            <p>Crea un'interfaccia HTML con input, bottone e output per visualizzare la sequenza di Fibonacci.</p>
+
+            <h3>HTML richiesto:</h3>
+            <pre><code>&lt;input type="number" id="input" placeholder="Inserisci n" /&gt;
+&lt;button onclick="displayFibonacci()"&gt;Calcola&lt;/button&gt;
+&lt;p id="output"&gt;&lt;/p&gt;</code></pre>
+
+            <h3>JavaScript da implementare:</h3>
+            <pre><code>function displayFibonacci() {
+  // 1. Prendi il valore dell'input
+  var n = document.getElementById("input").value;
+  
+  // 2. Converti in numero
+  n = parseInt(n);
+  
+  // 3. Chiama fibonacci(n)
+  var result = fibonacci(n);
+  
+  // 4. Mostra il risultato in #output
+  document.getElementById("output").innerHTML = result;
+}</code></pre>
+        </section>
+
+        <section class="exercise-section">
+            <h2>💡 Soluzione Completa</h2>
+            <details>
+                <summary>Clicca per vedere la soluzione completa</summary>
+                
+                <h3>HTML:</h3>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Fibonacci Calculator&lt;/title&gt;
+  &lt;style&gt;
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 5px;
+    }
+    #output {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      min-height: 30px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Calcolatore di Fibonacci&lt;/h1&gt;
+  &lt;input type="number" id="input" placeholder="Inserisci n" min="1" /&gt;
+  &lt;button onclick="displayFibonacci()"&gt;Calcola Fibonacci&lt;/button&gt;
+  &lt;p id="output"&gt;I risultati appariranno qui...&lt;/p&gt;
+
+  &lt;script&gt;
+    function fibonacci(n) {
+      if (n === 1) {
+        return [0];
+      }
+      
+      if (n === 2) {
+        return [0, 1];
+      }
+      
+      var result = [0, 1];
+      
+      for (var i = 2; i < n; i++) {
+        var next = result[result.length - 1] + result[result.length - 2];
+        result.push(next);
+      }
+      
+      return result;
+    }
+
+    function displayFibonacci() {
+      var n = document.getElementById("input").value;
+      n = parseInt(n);
+      
+      if (isNaN(n) || n < 1) {
+        document.getElementById("output").innerHTML = 
+          "Per favore inserisci un numero valido maggiore di 0";
+        return;
+      }
+      
+      var result = fibonacci(n);
+      document.getElementById("output").innerHTML = 
+        "Fibonacci(" + n + ") = [" + result.join(", ") + "]";
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </details>
+        </section>
+
+        <section class="exercise-section">
+            <h2>🚀 Sfide Extra</h2>
+            <ol>
+                <li>Aggiungi validazione per controllare che n sia un numero positivo</li>
+                <li>Mostra ogni numero di Fibonacci in un elemento separato (es. <code>&lt;span&gt;</code>)</li>
+                <li>Calcola e mostra anche la somma di tutti i numeri</li>
+                <li>Aggiungi un bottone per resettare l'input e l'output</li>
+                <li>Visualizza i numeri con una animazione progressiva</li>
+            </ol>
+        </section>
+
+        <section class="exercise-section">
+            <h2>📚 Materiali e Risorse</h2>
+            <ul class="resources-list">
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank" rel="noopener noreferrer">MDN - JavaScript Guide</a></li>
+                <li><a href="https://www.w3schools.com/js/" target="_blank" rel="noopener noreferrer">W3Schools - JavaScript Tutorial</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById" target="_blank" rel="noopener noreferrer">MDN - getElementById</a></li>
+                <li><a href="https://javascript.info/" target="_blank" rel="noopener noreferrer">JavaScript.info - Modern JavaScript</a></li>
+            </ul>
+        </section>
+
+        <nav class="exercise-navigation">
+            <a href="../tema/javascript.html" class="nav-btn nav-btn-secondary">← Torna agli esercizi JavaScript</a>
+            <a href="js-esercizio-2.html" class="nav-btn">Prossimo esercizio →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Creato da <span class="signature">Mattia Graziani</span></p>
+    </footer>
+</body>
+</html>

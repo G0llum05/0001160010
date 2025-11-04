@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Esercizio CSS 1: Posizionamento - absolute, relative, fixed, sticky">
+    <title>CSS Esercizio 1 - Posizionamento | TW Exercises</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/exercise.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="navbar-brand" href="../index.html">TW Exercises</a>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            
+            <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../risorse.html">Risorse</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../chat.html">Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="../tema/css.html">CSS</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Esercizio 1</li>
+            </ol>
+        </nav>
+
+        <article class="exercise-header">
+            <h1 class="exercise-title">Esercizio 1: Posizionamento CSS</h1>
+            <div class="exercise-meta">
+                <span class="badge-difficulty badge-medio">Medio</span>
+                <span>⏱️ Durata: 60 minuti</span>
+                <span>📚 Prerequisiti: HTML di base</span>
+            </div>
+        </article>
+
+        <section class="keywords-section">
+            <h2>Keywords</h2>
+            <div class="keywords-list">
+                <span class="keyword-tag">position</span>
+                <span class="keyword-tag">margin</span>
+                <span class="keyword-tag">padding</span>
+                <span class="keyword-tag">absolute</span>
+                <span class="keyword-tag">relative</span>
+                <span class="keyword-tag">fixed</span>
+                <span class="keyword-tag">sticky</span>
+            </div>
+        </section>
+
+        <section class="exercise-section">
+            <h2>🎯 Obiettivi di Apprendimento</h2>
+            <ul class="objectives-list">
+                <li>Comprendere i diversi tipi di posizionamento CSS</li>
+                <li>Utilizzare position: static, relative, absolute, fixed, sticky</li>
+                <li>Padroneggiare le proprietà top, right, bottom, left</li>
+                <li>Comprendere il contesto di posizionamento</li>
+                <li>Creare layout complessi con posizionamento assoluto</li>
+                <li>Distinguere tra margin e padding</li>
+            </ul>
+        </section>
+
+        <section class="exercise-section">
+            <h2>📖 Teoria</h2>
+            
+            <h3>Position: Static</h3>
+            <p>Il posizionamento predefinito per tutti gli elementi. Gli elementi appaiono nell'ordine in cui sono scritti nel codice HTML.</p>
+            <pre><code>div {
+  position: static; /* default */
+}</code></pre>
+
+            <h3>Position: Relative</h3>
+            <p>L'elemento viene posizionato secondo il normale flusso del documento e poi spostato rispetto a se stesso usando top, right, bottom, left. Lo spostamento non influisce sulla posizione di altri elementi.</p>
+            <pre><code>div {
+  position: relative;
+  top: 20px;
+  left: 10px;
+}</code></pre>
+
+            <h3>Position: Absolute</h3>
+            <p>L'elemento viene rimosso dal flusso normale e posizionato rispetto al suo primo antenato posizionato (non static). Se non esiste, si posiziona rispetto al documento.</p>
+            <pre><code>div {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+}</code></pre>
+
+            <h3>Position: Fixed</h3>
+            <p>Simile ad absolute, ma l'elemento rimane fisso rispetto alla viewport anche quando si scrolla la pagina.</p>
+            <pre><code>div {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}</code></pre>
+
+            <h3>Position: Sticky</h3>
+            <p>Un ibrido tra relative e fixed. L'elemento si comporta come relative finché non raggiunge una soglia di scroll, poi diventa fixed.</p>
+            <pre><code>div {
+  position: sticky;
+  top: 0;
+}</code></pre>
+
+            <div class="prerequisites-section">
+                <h3>💡 Nota Importante</h3>
+                <p>Per usare position: absolute correttamente, l'elemento genitore deve avere position: relative (o absolute/fixed). Questo crea un "contesto di posizionamento".</p>
+            </div>
+        </section>
+
+        <section class="exercise-section">
+            <h2>✏️ Esercizio 1: Piastrella Quadrata</h2>
+            <p>Crea una "piastrella" quadrata composta da quattro div colorati usando position: absolute.</p>
+            
+            <h3>HTML da usare:</h3>
+            <pre><code>&lt;div id="one"&gt;&lt;/div&gt;
+&lt;div id="two"&gt;&lt;/div&gt;
+&lt;div id="three"&gt;&lt;/div&gt;
+&lt;div id="four"&gt;&lt;/div&gt;</code></pre>
+
+            <h3>CSS di partenza:</h3>
+            <pre><code>div {
+  height: 50vh;
+  width: 50vh;
+  position: absolute;
+}</code></pre>
+
+            <h3>Obiettivo:</h3>
+            <p>Posiziona i quattro div come un quadrato 2x2, ognuno con un colore diverso.</p>
+        </section>
+
+        <section class="exercise-section">
+            <h2>✏️ Esercizio 2: Strisce Orizzontali</h2>
+            <p>Crea cinque div che coprono l'intera larghezza della pagina, uno sopra l'altro, tutti visibili.</p>
+            
+            <h3>HTML da usare:</h3>
+            <pre><code>&lt;div id="one"&gt;&lt;/div&gt;
+&lt;div id="two"&gt;&lt;/div&gt;
+&lt;div id="three"&gt;&lt;/div&gt;
+&lt;div id="four"&gt;&lt;/div&gt;
+&lt;div id="five"&gt;&lt;/div&gt;</code></pre>
+
+            <h3>CSS di partenza:</h3>
+            <pre><code>div {
+  height: 20vh;
+  width: 100%;
+  position: absolute;
+}</code></pre>
+
+            <h3>Obiettivo:</h3>
+            <p>Dai a ogni div un colore di background diverso e posizionali verticalmente in modo che siano tutti visibili.</p>
+        </section>
+
+        <section class="exercise-section">
+            <h2>✏️ Esercizio 3: Layout Libero</h2>
+            <p>Crea un layout con sei div posizionati liberamente usando position: absolute.</p>
+            
+            <h3>HTML da usare:</h3>
+            <pre><code>&lt;div id="one"&gt;&lt;/div&gt;
+&lt;div id="two"&gt;&lt;/div&gt;
+&lt;div id="three"&gt;&lt;/div&gt;
+&lt;div id="four"&gt;&lt;/div&gt;
+&lt;div id="five"&gt;&lt;/div&gt;
+&lt;div id="six"&gt;&lt;/div&gt;</code></pre>
+
+            <h3>CSS di partenza:</h3>
+            <pre><code>div {
+  position: absolute;
+}</code></pre>
+
+            <h3>Obiettivo:</h3>
+            <p>Crea un pattern interessante posizionando i div liberamente. Dai a ciascuno dimensioni e colori diversi. Sii creativo!</p>
+        </section>
+
+        <section class="exercise-section">
+            <h2>💡 Soluzione Esercizio 1</h2>
+            <details>
+                <summary>Clicca per vedere la soluzione</summary>
+                <pre><code>div {
+  height: 50vh;
+  width: 50vh;
+  position: absolute;
+}
+
+#one {
+  background-color: #ff6b6b;
+  top: 0;
+  left: 0;
+}
+
+#two {
+  background-color: #4ecdc4;
+  top: 0;
+  left: 50vh;
+}
+
+#three {
+  background-color: #45b7d1;
+  top: 50vh;
+  left: 0;
+}
+
+#four {
+  background-color: #feca57;
+  top: 50vh;
+  left: 50vh;
+}</code></pre>
+            </details>
+        </section>
+
+        <section class="exercise-section">
+            <h2>💡 Soluzione Esercizio 2</h2>
+            <details>
+                <summary>Clicca per vedere la soluzione</summary>
+                <pre><code>div {
+  height: 20vh;
+  width: 100%;
+  position: absolute;
+}
+
+#one {
+  background-color: #ff6b6b;
+  top: 0;
+}
+
+#two {
+  background-color: #4ecdc4;
+  top: 20vh;
+}
+
+#three {
+  background-color: #45b7d1;
+  top: 40vh;
+}
+
+#four {
+  background-color: #feca57;
+  top: 60vh;
+}
+
+#five {
+  background-color: #a29bfe;
+  top: 80vh;
+}</code></pre>
+            </details>
+        </section>
+
+        <section class="exercise-section">
+            <h2>💡 Soluzione Esercizio 3 (Esempio)</h2>
+            <details>
+                <summary>Clicca per vedere un esempio di soluzione</summary>
+                <pre><code>div {
+  position: absolute;
+}
+
+#one {
+  background-color: #ff6b6b;
+  width: 200px;
+  height: 200px;
+  top: 50px;
+  left: 50px;
+}
+
+#two {
+  background-color: #4ecdc4;
+  width: 150px;
+  height: 150px;
+  top: 100px;
+  left: 300px;
+}
+
+#three {
+  background-color: #45b7d1;
+  width: 180px;
+  height: 180px;
+  top: 300px;
+  left: 100px;
+}
+
+#four {
+  background-color: #feca57;
+  width: 120px;
+  height: 120px;
+  top: 200px;
+  left: 500px;
+}
+
+#five {
+  background-color: #a29bfe;
+  width: 160px;
+  height: 160px;
+  top: 400px;
+  left: 350px;
+}
+
+#six {
+  background-color: #fd79a8;
+  width: 140px;
+  height: 140px;
+  top: 150px;
+  left: 650px;
+}</code></pre>
+                <p><em>Nota: Questa è solo una delle infinite soluzioni possibili. Sperimenta con valori diversi!</em></p>
+            </details>
+        </section>
+
+        <section class="exercise-section">
+            <h2>📚 Materiali e Risorse</h2>
+            <ul class="resources-list">
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="_blank" rel="noopener noreferrer">MDN - CSS Position</a></li>
+                <li><a href="https://css-tricks.com/almanac/properties/p/position/" target="_blank" rel="noopener noreferrer">CSS-Tricks - Position</a></li>
+                <li><a href="https://www.w3schools.com/css/css_positioning.asp" target="_blank" rel="noopener noreferrer">W3Schools - CSS Positioning</a></li>
+                <li><a href="https://codepen.io/" target="_blank" rel="noopener noreferrer">CodePen - Ambiente di test</a></li>
+            </ul>
+        </section>
+
+        <nav class="exercise-navigation">
+            <a href="../tema/css.html" class="nav-btn nav-btn-secondary">← Torna agli esercizi CSS</a>
+            <a href="css-esercizio-2.html" class="nav-btn">Prossimo esercizio →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Creato da <span class="signature">Mattia Graziani</span></p>
+    </footer>
+</body>
+</html>

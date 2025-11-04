@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Esercizio HTML 2: Tabelle complesse con rowspan e colspan">
+    <title>HTML Esercizio 2 - Tabelle | TW Exercises</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/exercise.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="navbar-brand" href="../index.html">TW Exercises</a>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            
+            <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../risorse.html">Risorse</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../chat.html">Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="../tema/html.html">HTML</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Esercizio 2</li>
+            </ol>
+        </nav>
+
+        <article class="exercise-header">
+            <h1 class="exercise-title">Esercizio 2: Tabelle con Rowspan e Colspan</h1>
+            <div class="exercise-meta">
+                <span class="badge-difficulty badge-medio">Medio</span>
+                <span>⏱️ Durata: 45 minuti</span>
+                <span>📚 Prerequisiti: HTML Esercizio 1</span>
+            </div>
+        </article>
+
+        <section class="keywords-section">
+            <h2>Keywords</h2>
+            <div class="keywords-list">
+                <span class="keyword-tag">tables</span>
+                <span class="keyword-tag">columns</span>
+                <span class="keyword-tag">cells</span>
+                <span class="keyword-tag">rowspan</span>
+                <span class="keyword-tag">colspan</span>
+            </div>
+        </section>
+
+        <section class="exercise-section">
+            <h2>🎯 Obiettivi di Apprendimento</h2>
+            <ul class="objectives-list">
+                <li>Comprendere la struttura delle tabelle HTML</li>
+                <li>Utilizzare correttamente thead, tbody e tfoot</li>
+                <li>Creare celle di intestazione con th</li>
+                <li>Implementare celle di dati con td</li>
+                <li>Padroneggiare l'uso di rowspan per celle che occupano più righe</li>
+                <li>Padroneggiare l'uso di colspan per celle che occupano più colonne</li>
+                <li>Creare tabelle complesse e ben strutturate</li>
+            </ul>
+        </section>
+
+        <section class="exercise-section">
+            <h2>📖 Teoria</h2>
+            <h3>Struttura delle Tabelle</h3>
+            <p>Le tabelle HTML sono utilizzate per organizzare e visualizzare dati in forma tabulare. Componenti principali:</p>
+            <ul>
+                <li><strong>&lt;table&gt;</strong>: Contenitore principale della tabella</li>
+                <li><strong>&lt;thead&gt;</strong>: Raggruppa le righe di intestazione</li>
+                <li><strong>&lt;tbody&gt;</strong>: Raggruppa il corpo della tabella con i dati</li>
+                <li><strong>&lt;tfoot&gt;</strong>: Raggruppa il footer della tabella</li>
+                <li><strong>&lt;tr&gt;</strong>: Table row - definisce una riga</li>
+                <li><strong>&lt;th&gt;</strong>: Table header - cella di intestazione</li>
+                <li><strong>&lt;td&gt;</strong>: Table data - cella di dati</li>
+            </ul>
+
+            <h3>Attributi Essenziali</h3>
+            <ul>
+                <li><strong>colspan</strong>: Specifica quante colonne occupa una cella (th o td)</li>
+                <li><strong>rowspan</strong>: Specifica quante righe occupa una cella (th o td)</li>
+                <li><strong>&lt;caption&gt;</strong>: Aggiunge un titolo descrittivo alla tabella</li>
+                <li><strong>&lt;colgroup&gt; e &lt;col&gt;</strong>: Definiscono proprietà delle colonne</li>
+            </ul>
+
+            <h3>Esempio Base</h3>
+            <pre><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Nome&lt;/th&gt;
+      &lt;th&gt;Cognome&lt;/th&gt;
+      &lt;th&gt;Età&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Mario&lt;/td&gt;
+      &lt;td&gt;Rossi&lt;/td&gt;
+      &lt;td&gt;35&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+            <div class="prerequisites-section">
+                <h3>💡 Suggerimento</h3>
+                <p>Quando usi <code>rowspan</code> o <code>colspan</code>, ricorda che le celle successive nella stessa riga o nelle righe seguenti devono essere omesse per il numero di celle occupate. Disegna la tabella su carta prima di codificarla!</p>
+            </div>
+        </section>
+
+        <section class="exercise-section">
+            <h2>✏️ Traccia dell'Esercizio</h2>
+            <p>Crea una tabella delle specifiche di auto con la seguente struttura:</p>
+            
+            <h3>Struttura richiesta:</h3>
+            <ol>
+                <li><strong>Header (thead)</strong>:
+                    <ul>
+                        <li>Prima riga: "Modello" (2 righe), "Prestazioni" (3 colonne), "Prezzo" (2 righe)</li>
+                        <li>Seconda riga: "Velocità", "Capacità", "Consumo"</li>
+                    </ul>
+                </li>
+                <li><strong>Body (tbody)</strong> con 3 righe:
+                    <ul>
+                        <li>Audi A4: 200 km/h, 5 persone, 6 L/100km (2 righe), € 40.000</li>
+                        <li>BMW X5: SUV (2 colonne), € 65.000</li>
+                        <li>Ford Mustang: 250 km/h, 2 persone, "Vendita vietata in Europa" (2 colonne)</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <p>Aggiungi questo CSS per visualizzare i bordi:</p>
+            <pre><code>&lt;style&gt;
+  table, th, td {
+    border: 1px solid black;
+  }
+&lt;/style&gt;</code></pre>
+        </section>
+
+        <section class="exercise-section">
+            <h2>💡 Soluzione</h2>
+            <details>
+                <summary>Clicca per vedere la soluzione</summary>
+                <pre><code>&lt;style&gt;
+  table, th, td {
+    border: 1px solid black;
+  }
+&lt;/style&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th rowspan="2"&gt;Modello&lt;/th&gt;
+      &lt;th colspan="3"&gt;Prestazioni&lt;/th&gt;
+      &lt;th rowspan="2"&gt;Prezzo&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Velocità&lt;/th&gt;
+      &lt;th&gt;Capacità&lt;/th&gt;
+      &lt;th&gt;Consumo&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Audi A4&lt;/td&gt;
+      &lt;td&gt;200 km/h&lt;/td&gt;
+      &lt;td&gt;5 persone&lt;/td&gt;
+      &lt;td rowspan="2"&gt;6 L/100km&lt;/td&gt;
+      &lt;td&gt;€ 40.000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;BMW X5&lt;/td&gt;
+      &lt;td colspan="2"&gt;SUV&lt;/td&gt;
+      &lt;td&gt;€ 65.000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ford Mustang&lt;/td&gt;
+      &lt;td&gt;250 km/h&lt;/td&gt;
+      &lt;td&gt;2 persone&lt;/td&gt;
+      &lt;td colspan="2"&gt;Vendita vietata in Europa&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+                <h3>Risultato Visivo:</h3>
+                <table style="border: 1px solid black; border-collapse: collapse; margin: 20px 0;">
+                    <thead>
+                        <tr>
+                            <th rowspan="2" style="border: 1px solid black; padding: 8px;">Modello</th>
+                            <th colspan="3" style="border: 1px solid black; padding: 8px;">Prestazioni</th>
+                            <th rowspan="2" style="border: 1px solid black; padding: 8px;">Prezzo</th>
+                        </tr>
+                        <tr>
+                            <th style="border: 1px solid black; padding: 8px;">Velocità</th>
+                            <th style="border: 1px solid black; padding: 8px;">Capacità</th>
+                            <th style="border: 1px solid black; padding: 8px;">Consumo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border: 1px solid black; padding: 8px;">Audi A4</td>
+                            <td style="border: 1px solid black; padding: 8px;">200 km/h</td>
+                            <td style="border: 1px solid black; padding: 8px;">5 persone</td>
+                            <td rowspan="2" style="border: 1px solid black; padding: 8px;">6 L/100km</td>
+                            <td style="border: 1px solid black; padding: 8px;">€ 40.000</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; padding: 8px;">BMW X5</td>
+                            <td colspan="2" style="border: 1px solid black; padding: 8px;">SUV</td>
+                            <td style="border: 1px solid black; padding: 8px;">€ 65.000</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid black; padding: 8px;">Ford Mustang</td>
+                            <td style="border: 1px solid black; padding: 8px;">250 km/h</td>
+                            <td style="border: 1px solid black; padding: 8px;">2 persone</td>
+                            <td colspan="2" style="border: 1px solid black; padding: 8px;">Vendita vietata in Europa</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </details>
+        </section>
+
+        <section class="exercise-section">
+            <h2>📚 Materiali e Risorse</h2>
+            <ul class="resources-list">
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table" target="_blank" rel="noopener noreferrer">MDN - HTML Table Element</a></li>
+                <li><a href="https://www.w3schools.com/html/html_tables.asp" target="_blank" rel="noopener noreferrer">W3Schools - HTML Tables</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables" target="_blank" rel="noopener noreferrer">MDN - HTML Table Basics</a></li>
+                <li><a href="https://css-tricks.com/complete-guide-table-element/" target="_blank" rel="noopener noreferrer">CSS-Tricks - Guide to Tables</a></li>
+            </ul>
+        </section>
+
+        <nav class="exercise-navigation">
+            <a href="html-esercizio-1.html" class="nav-btn nav-btn-secondary">← Esercizio precedente</a>
+            <a href="../tema/html.html" class="nav-btn">Torna agli esercizi HTML →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Creato da <span class="signature">Mattia Graziani</span></p>
+    </footer>
+</body>
+</html>

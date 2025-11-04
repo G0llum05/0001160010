@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Esercizio JavaScript 2: Gioco dei dadi con DOM manipulation e Math.random">
+    <title>JS Esercizio 2 - Gioco dei Dadi | TW Exercises</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/exercise.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="navbar-brand" href="../index.html">TW Exercises</a>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            
+            <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../risorse.html">Risorse</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../chat.html">Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="../tema/javascript.html">JavaScript</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Esercizio 2</li>
+            </ol>
+        </nav>
+
+        <article class="exercise-header">
+            <h1 class="exercise-title">Esercizio 2: Gioco dei Dadi</h1>
+            <div class="exercise-meta">
+                <span class="badge-difficulty badge-avanzato">Avanzato</span>
+                <span>⏱️ Durata: 90 minuti</span>
+                <span>📚 Prerequisiti: JS Esercizio 1</span>
+            </div>
+        </article>
+
+        <section class="keywords-section">
+            <h2>Keywords</h2>
+            <div class="keywords-list">
+                <span class="keyword-tag">DOM</span>
+                <span class="keyword-tag">Math.random</span>
+                <span class="keyword-tag">getElementById</span>
+                <span class="keyword-tag">querySelector</span>
+                <span class="keyword-tag">setAttribute</span>
+            </div>
+        </section>
+
+        <section class="exercise-section">
+            <h2>🎯 Obiettivi di Apprendimento</h2>
+            <ul class="objectives-list">
+                <li>Comprendere il Document Object Model (DOM)</li>
+                <li>Manipolare elementi HTML con JavaScript</li>
+                <li>Utilizzare Math.random() per generare numeri casuali</li>
+                <li>Selezionare elementi con querySelector e querySelectorAll</li>
+                <li>Modificare attributi degli elementi con setAttribute</li>
+                <li>Cambiare il contenuto HTML con innerHTML</li>
+                <li>Gestire eventi e interazioni utente</li>
+            </ul>
+        </section>
+
+        <section class="exercise-section">
+            <h2>📖 Teoria</h2>
+            
+            <h3>Il DOM (Document Object Model)</h3>
+            <p>Il DOM è una rappresentazione della struttura di un documento HTML che può essere manipolata con JavaScript. Caricando una pagina, il browser crea un albero DOM dove ogni nodo rappresenta un elemento della pagina.</p>
+
+            <h3>Selezione di Elementi</h3>
+            <pre><code>// Seleziona per ID
+var element = document.getElementById("myId");
+
+// Seleziona il primo elemento che corrisponde
+var element = document.querySelector(".myClass");
+var element = document.querySelector("#myId");
+
+// Seleziona tutti gli elementi che corrispondono
+var elements = document.querySelectorAll(".myClass");
+// elements è un NodeList (simile a un array)</code></pre>
+
+            <h3>Manipolazione di Elementi</h3>
+            <pre><code>// Cambiare il contenuto HTML
+element.innerHTML = "&lt;strong&gt;Nuovo contenuto&lt;/strong&gt;";
+
+// Cambiare un attributo
+element.setAttribute("src", "nuova-immagine.png");
+element.setAttribute("class", "nuova-classe");
+
+// Ottenere un attributo
+var src = element.getAttribute("src");</code></pre>
+
+            <h3>Math.random()</h3>
+            <p>Genera un numero decimale casuale tra 0 (incluso) e 1 (escluso):</p>
+            <pre><code>var random = Math.random();
+console.log(random); // es: 0.7234891234
+
+// Numero intero casuale tra 1 e 6
+var dado = Math.floor(Math.random() * 6) + 1;
+
+// Spiegazione:
+// Math.random() → 0.000 a 0.999
+// * 6 → 0.000 a 5.999
+// Math.floor() → 0 a 5
+// + 1 → 1 a 6</code></pre>
+
+            <h3>Concatenazione di Stringhe</h3>
+            <pre><code>var numero = 5;
+var percorso = "images/dice" + numero + ".png";
+// Risultato: "images/dice5.png"</code></pre>
+
+            <div class="prerequisites-section">
+                <h3>💡 Nota Importante</h3>
+                <p>Gli indici degli array (e delle NodeList) iniziano da 0. Il primo elemento è <code>array[0]</code>, il secondo è <code>array[1]</code>, ecc.</p>
+            </div>
+        </section>
+
+        <section class="exercise-section">
+            <h2>✏️ Parte 1: Generare Numeri Casuali</h2>
+            <p>Crea una variabile che generi un numero casuale tra 1 e 6.</p>
+            
+            <h3>Passi:</h3>
+            <ol>
+                <li>Inizializza una variabile <code>random1</code></li>
+                <li>Usa <code>Math.random()</code> e <code>Math.floor()</code> per generare un numero tra 1 e 6</li>
+                <li>Controlla il risultato con <code>console.log(random1)</code></li>
+            </ol>
+
+            <pre><code>// La tua soluzione qui
+var random1 = Math.floor(Math.random() * 6) + 1;
+console.log(random1);</code></pre>
+        </section>
+
+        <section class="exercise-section">
+            <h2>✏️ Parte 2: Creare Percorsi Dinamici</h2>
+            <p>Crea una variabile che contenga il percorso dell'immagine del dado basandosi sul numero casuale.</p>
+            
+            <h3>Esempio:</h3>
+            <p>Se <code>random1 = 5</code>, il percorso deve essere <code>"images/dice5.png"</code></p>
+
+            <pre><code>var imagePath1 = "images/dice" + random1 + ".png";
+console.log(imagePath1);</code></pre>
+        </section>
+
+        <section class="exercise-section">
+            <h2>✏️ Parte 3: Modificare le Immagini</h2>
+            <p>HTML di partenza:</p>
+            <pre><code>&lt;img class="img" src="images/dice6.png" alt="Dado Player 1"&gt;
+&lt;img class="img" src="images/dice6.png" alt="Dado Player 2"&gt;</code></pre>
+
+            <h3>Obiettivo:</h3>
+            <p>Cambia l'attributo <code>src</code> di entrambe le immagini con percorsi casuali ogni volta che la pagina viene ricaricata.</p>
+
+            <h3>Passi:</h3>
+            <ol>
+                <li>Genera <code>random1</code> e <code>random2</code></li>
+                <li>Crea <code>imagePath1</code> e <code>imagePath2</code></li>
+                <li>Seleziona le immagini con <code>querySelectorAll(".img")</code></li>
+                <li>Cambia l'attributo src della prima immagine: <code>images[0].setAttribute("src", imagePath1)</code></li>
+                <li>Cambia l'attributo src della seconda immagine: <code>images[1].setAttribute("src", imagePath2)</code></li>
+            </ol>
+        </section>
+
+        <section class="exercise-section">
+            <h2>✏️ Parte 4: Determinare il Vincitore</h2>
+            <p>HTML per il titolo:</p>
+            <pre><code>&lt;h1 id="result"&gt;Lancia i dadi!&lt;/h1&gt;</code></pre>
+
+            <h3>Obiettivo:</h3>
+            <p>Confronta i due numeri casuali e aggiorna il titolo con il vincitore.</p>
+
+            <pre><code>if (random1 > random2) {
+  document.getElementById("result").innerHTML = "🚩 Player 1 Vince!";
+} else if (random2 > random1) {
+  document.getElementById("result").innerHTML = "Player 2 Vince! 🚩";
+} else {
+  document.getElementById("result").innerHTML = "Pareggio! 🤝";
+}</code></pre>
+        </section>
+
+        <section class="exercise-section">
+            <h2>💡 Soluzione Completa</h2>
+            <details>
+                <summary>Clicca per vedere la soluzione completa</summary>
+                
+                <h3>HTML:</h3>
+                <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Gioco dei Dadi&lt;/title&gt;
+  &lt;style&gt;
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      min-height: 100vh;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 50px;
+    }
+    .player {
+      text-align: center;
+    }
+    .img {
+      width: 150px;
+      height: 150px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border-radius: 10px;
+    }
+    button {
+      margin-top: 30px;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      background-color: white;
+      color: #667eea;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1 id="result"&gt;🎲 Clicca per lanciare i dadi! 🎲&lt;/h1&gt;
+  
+  &lt;div class="container"&gt;
+    &lt;div class="player"&gt;
+      &lt;h2&gt;Player 1&lt;/h2&gt;
+      &lt;img class="img" src="images/dice6.png" alt="Dado Player 1"&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="player"&gt;
+      &lt;h2&gt;Player 2&lt;/h2&gt;
+      &lt;img class="img" src="images/dice6.png" alt="Dado Player 2"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;button onclick="rollDice()"&gt;Lancia i Dadi&lt;/button&gt;
+
+  &lt;script&gt;
+    function rollDice() {
+      // Genera numeri casuali
+      var random1 = Math.floor(Math.random() * 6) + 1;
+      var random2 = Math.floor(Math.random() * 6) + 1;
+      
+      // Crea percorsi immagini
+      var imagePath1 = "images/dice" + random1 + ".png";
+      var imagePath2 = "images/dice" + random2 + ".png";
+      
+      // Seleziona le immagini
+      var images = document.querySelectorAll(".img");
+      
+      // Cambia le immagini
+      images[0].setAttribute("src", imagePath1);
+      images[1].setAttribute("src", imagePath2);
+      
+      // Determina il vincitore
+      var resultElement = document.getElementById("result");
+      
+      if (random1 > random2) {
+        resultElement.innerHTML = "🚩 Player 1 Vince!";
+      } else if (random2 > random1) {
+        resultElement.innerHTML = "Player 2 Vince! 🚩";
+      } else {
+        resultElement.innerHTML = "Pareggio! 🤝";
+      }
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                <h3>Note:</h3>
+                <p><strong>Importante:</strong> Questo esempio presuppone che tu abbia le immagini dei dadi nella cartella <code>images/</code> con i nomi <code>dice1.png</code>, <code>dice2.png</code>, ecc. Puoi trovare immagini di dadi gratuite online o usare emoji unicode: 🎲</p>
+                
+                <p>Alternativa senza immagini esterne (usa emoji):</p>
+                <pre><code>// Usa emoji invece di immagini
+var diceEmojis = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+// oppure
+var diceEmojis = ["🎲", "🎲", "🎲", "🎲", "🎲", "🎲"];
+
+images[0].innerHTML = diceEmojis[random1 - 1];
+images[1].innerHTML = diceEmojis[random2 - 1];</code></pre>
+            </details>
+        </section>
+
+        <section class="exercise-section">
+            <h2>🚀 Sfide Extra</h2>
+            <ol>
+                <li>Aggiungi un contatore di vittorie per ogni giocatore</li>
+                <li>Aggiungi animazioni quando i dadi vengono lanciati</li>
+                <li>Permetti agli utenti di inserire i nomi dei giocatori</li>
+                <li>Aggiungi suoni quando i dadi vengono lanciati</li>
+                <li>Crea una modalità "best of 5" con round multipli</li>
+                <li>Aggiungi un terzo giocatore</li>
+            </ol>
+        </section>
+
+        <section class="exercise-section">
+            <h2>📚 Materiali e Risorse</h2>
+            <ul class="resources-list">
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="_blank" rel="noopener noreferrer">MDN - DOM Introduction</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random" target="_blank" rel="noopener noreferrer">MDN - Math.random()</a></li>
+                <li><a href="https://www.w3schools.com/js/js_htmldom.asp" target="_blank" rel="noopener noreferrer">W3Schools - JavaScript HTML DOM</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector" target="_blank" rel="noopener noreferrer">MDN - querySelector</a></li>
+                <li><a href="https://opengameart.org/" target="_blank" rel="noopener noreferrer">OpenGameArt - Immagini gratuite per giochi</a></li>
+            </ul>
+        </section>
+
+        <nav class="exercise-navigation">
+            <a href="js-esercizio-1.html" class="nav-btn nav-btn-secondary">← Esercizio precedente</a>
+            <a href="../tema/javascript.html" class="nav-btn">Torna agli esercizi JavaScript →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Creato da <span class="signature">Mattia Graziani</span></p>
+    </footer>
+</body>
+</html>

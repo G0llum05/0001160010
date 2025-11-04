@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="[DESCRIZIONE BREVE DELL'ESERCIZIO]">
+    <title>[TITOLO] | TW Exercises</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/exercise.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="navbar-brand" href="../index.html">TW Exercises</a>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            
+            <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../risorse.html">Risorse</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../chat.html">Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="../tema/[TEMA].html">[TEMA]</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Esercizio [N]</li>
+            </ol>
+        </nav>
+
+        <!-- Exercise Header -->
+        <article class="exercise-header">
+            <h1 class="exercise-title">Esercizio [N]: [TITOLO]</h1>
+            <div class="exercise-meta">
+                <!-- Difficoltà: badge-base | badge-medio | badge-avanzato -->
+                <span class="badge-difficulty badge-[DIFFICOLTA]">[Base/Medio/Avanzato]</span>
+                <span>⏱️ Durata: [X] minuti</span>
+                <span>📚 Prerequisiti: [PREREQUISITI]</span>
+            </div>
+        </article>
+
+        <!-- Keywords Section -->
+        <section class="keywords-section">
+            <h2>Keywords</h2>
+            <div class="keywords-list">
+                <span class="keyword-tag">[keyword1]</span>
+                <span class="keyword-tag">[keyword2]</span>
+                <span class="keyword-tag">[keyword3]</span>
+                <!-- Aggiungi altre keywords -->
+            </div>
+        </section>
+
+        <!-- Learning Objectives -->
+        <section class="exercise-section">
+            <h2>🎯 Obiettivi di Apprendimento</h2>
+            <ul class="objectives-list">
+                <li>[Obiettivo 1]</li>
+                <li>[Obiettivo 2]</li>
+                <li>[Obiettivo 3]</li>
+                <li>[Obiettivo 4]</li>
+                <!-- Aggiungi altri obiettivi -->
+            </ul>
+        </section>
+
+        <!-- Theory Section -->
+        <section class="exercise-section">
+            <h2>📖 Teoria</h2>
+            
+            <h3>[Sottotitolo Teoria 1]</h3>
+            <p>[Spiegazione del concetto]</p>
+            
+            <pre><code>/* Esempio di codice */
+[codice di esempio]</code></pre>
+
+            <h3>[Sottotitolo Teoria 2]</h3>
+            <p>[Altra spiegazione]</p>
+
+            <!-- Box informativo opzionale -->
+            <div class="prerequisites-section">
+                <h3>💡 Nota Importante</h3>
+                <p>[Suggerimento o nota importante]</p>
+            </div>
+        </section>
+
+        <!-- Exercise Task -->
+        <section class="exercise-section">
+            <h2>✏️ Traccia dell'Esercizio</h2>
+            <p>[Descrizione del compito da svolgere]</p>
+            
+            <h3>Requisiti:</h3>
+            <ol>
+                <li>[Requisito 1]</li>
+                <li>[Requisito 2]</li>
+                <li>[Requisito 3]</li>
+                <!-- Aggiungi altri requisiti -->
+            </ol>
+
+            <h3>Codice di partenza:</h3>
+            <pre><code>[Codice HTML/CSS/JS di partenza]</code></pre>
+        </section>
+
+        <!-- Solution Section (Collapsible) -->
+        <section class="exercise-section">
+            <h2>💡 Soluzione</h2>
+            <details>
+                <summary>Clicca per vedere la soluzione</summary>
+                
+                <h3>[Titolo Soluzione]</h3>
+                <pre><code>[Codice della soluzione]</code></pre>
+
+                <h3>Spiegazione:</h3>
+                <p>[Spiegazione della soluzione]</p>
+            </details>
+        </section>
+
+        <!-- Optional: Extra Challenges -->
+        <section class="exercise-section">
+            <h2>🚀 Sfide Extra</h2>
+            <ol>
+                <li>[Sfida 1]</li>
+                <li>[Sfida 2]</li>
+                <li>[Sfida 3]</li>
+            </ol>
+        </section>
+
+        <!-- Materials and Resources -->
+        <section class="exercise-section">
+            <h2>📚 Materiali e Risorse</h2>
+            <ul class="resources-list">
+                <li><a href="[URL]" target="_blank" rel="noopener noreferrer">[Nome Risorsa 1]</a></li>
+                <li><a href="[URL]" target="_blank" rel="noopener noreferrer">[Nome Risorsa 2]</a></li>
+                <li><a href="[URL]" target="_blank" rel="noopener noreferrer">[Nome Risorsa 3]</a></li>
+                <!-- Aggiungi altre risorse -->
+            </ul>
+        </section>
+
+        <!-- Navigation Buttons -->
+        <nav class="exercise-navigation">
+            <a href="[esercizio-precedente].html" class="nav-btn nav-btn-secondary">← Esercizio precedente</a>
+            <a href="[esercizio-successivo].html" class="nav-btn">Prossimo esercizio →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Creato da <span class="signature">Mattia Graziani</span></p>
+    </footer>
+</body>
+</html>

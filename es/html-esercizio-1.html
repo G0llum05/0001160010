@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Esercizio HTML 1: Introduzione agli elementi di base di HTML - headers, paragrafi, liste e decorazioni del testo">
+    <title>HTML Esercizio 1 - Introduzione | TW Exercises</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/exercise.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="navbar-brand" href="../index.html">TW Exercises</a>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            
+            <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../risorse.html">Risorse</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../chat.html">Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="../tema/html.html">HTML</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Esercizio 1</li>
+            </ol>
+        </nav>
+
+        <article class="exercise-header">
+            <h1 class="exercise-title">Esercizio 1: Introduzione ad HTML</h1>
+            <div class="exercise-meta">
+                <span class="badge-difficulty badge-base">Base</span>
+                <span>⏱️ Durata: 30 minuti</span>
+                <span>📚 Prerequisiti: Nessuno</span>
+            </div>
+        </article>
+
+        <section class="keywords-section">
+            <h2>Keywords</h2>
+            <div class="keywords-list">
+                <span class="keyword-tag">HTML</span>
+                <span class="keyword-tag">headers</span>
+                <span class="keyword-tag">paragraphs</span>
+                <span class="keyword-tag">lists</span>
+                <span class="keyword-tag">text decoration</span>
+            </div>
+        </section>
+
+        <section class="exercise-section">
+            <h2>🎯 Obiettivi di Apprendimento</h2>
+            <ul class="objectives-list">
+                <li>Comprendere la struttura di base di un documento HTML</li>
+                <li>Utilizzare correttamente i tag di intestazione (h1-h6)</li>
+                <li>Creare paragrafi e formattare il testo</li>
+                <li>Implementare liste ordinate e non ordinate</li>
+                <li>Applicare decorazioni al testo (grassetto, corsivo, sottolineato, barrato)</li>
+                <li>Creare collegamenti ipertestuali</li>
+            </ul>
+        </section>
+
+        <section class="exercise-section">
+            <h2>📖 Teoria</h2>
+            <h3>Elementi di Layout</h3>
+            <p>HTML fornisce diversi elementi per strutturare contenuti testuali:</p>
+            <ul>
+                <li><strong>&lt;h*&gt;</strong>: Rappresenta un'intestazione di livello * (da 1 a 6). h1 è il più importante, h6 il meno importante.</li>
+                <li><strong>&lt;p&gt;</strong>: Rappresenta un paragrafo di testo.</li>
+                <li><strong>&lt;a&gt;</strong>: Rappresenta un collegamento ipertestuale. L'attributo <code>href</code> specifica l'URL di destinazione.</li>
+                <li><strong>&lt;ul&gt;</strong>: Lista non ordinata (bullet points), per elementi senza un ordine specifico.</li>
+                <li><strong>&lt;ol&gt;</strong>: Lista ordinata (numerata), per elementi con un ordine specifico.</li>
+                <li><strong>&lt;li&gt;</strong>: Singolo elemento di una lista.</li>
+            </ul>
+
+            <h3>Elementi di Stile del Testo</h3>
+            <ul>
+                <li><strong>&lt;strong&gt;</strong> (semantico) o <strong>&lt;b&gt;</strong> (grafico): Testo in grassetto</li>
+                <li><strong>&lt;em&gt;</strong> (semantico) o <strong>&lt;i&gt;</strong> (grafico): Testo in corsivo</li>
+                <li><strong>&lt;u&gt;</strong>: Testo sottolineato</li>
+                <li><strong>&lt;s&gt;</strong>: Testo barrato</li>
+            </ul>
+
+            <div class="prerequisites-section">
+                <h3>💡 Nota Importante</h3>
+                <p>È sempre preferibile utilizzare gli elementi semantici (&lt;strong&gt;, &lt;em&gt;) rispetto a quelli puramente grafici (&lt;b&gt;, &lt;i&gt;) perché comunicano meglio il significato del contenuto ai browser e agli screen reader.</p>
+            </div>
+        </section>
+
+        <section class="exercise-section">
+            <h2>✏️ Traccia dell'Esercizio</h2>
+            <p>Riproduci il seguente documento HTML utilizzando gli elementi appresi:</p>
+            <ol>
+                <li>Crea un titolo principale (h1) con il testo "Titolo principale"</li>
+                <li>Aggiungi un paragrafo con il testo "Lorem ipsum dolor sit amet" in grassetto, seguito da ", consectetur adipiscing elit."</li>
+                <li>Crea un titolo secondario (h2) con il testo "Titolo secondario"</li>
+                <li>Inserisci una lista non ordinata con tre elementi:
+                    <ul>
+                        <li>Il primo elemento con "Lorem ipsum dolor sit amet" in corsivo, seguito da ", consectetur adipiscing elit"</li>
+                        <li>Il secondo elemento con "Vestibulum ultricies est ac tellus" sottolineato, seguito da " aliquam malesuada"</li>
+                        <li>Il terzo elemento con "Sed et lacus quam. " seguito da "Nam facilisis sapien risus" barrato, e ", vel egestas nibh."</li>
+                    </ul>
+                </li>
+                <li>Aggiungi un altro paragrafo con il testo "Donec a turpis commodo. Vestibulum ante ipsum primis in faucibus orci luctus"</li>
+                <li>Inserisci una lista ordinata con tre link:
+                    <ul>
+                        <li>"Vivamus aliquet felis vel velit porttitor"</li>
+                        <li>"In ultricies massa rhoncus"</li>
+                        <li>"Nunc pharetra purus sapien"</li>
+                    </ul>
+                </li>
+                <li>Concludi con un paragrafo finale: "Fusce a luctus nulla. Vivamus aliquet felis vel velit porttitor"</li>
+            </ol>
+        </section>
+
+        <section class="exercise-section">
+            <h2>💡 Soluzione</h2>
+            <details>
+                <summary>Clicca per vedere la soluzione</summary>
+                <pre><code>&lt;h1&gt;Titolo principale&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Lorem ipsum dolor sit amet&lt;/strong&gt;, consectetur adipiscing elit.&lt;/p&gt;
+&lt;h2&gt;Titolo secondario&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;Lorem ipsum dolor sit amet&lt;/em&gt;, consectetur adipiscing elit&lt;/li&gt;
+  &lt;li&gt;&lt;u&gt;Vestibulum ultricies est ac tellus&lt;/u&gt; aliquam malesuada&lt;/li&gt;
+  &lt;li&gt;Sed et lacus quam. &lt;s&gt;Nam facilisis sapien risus&lt;/s&gt;, vel egestas nibh.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Donec a turpis commodo. Vestibulum ante ipsum primis in faucibus orci luctus&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Vivamus aliquet felis vel velit porttitor&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;In ultricies massa rhoncus&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#"&gt;Nunc pharetra purus sapien&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Fusce a luctus nulla. Vivamus aliquet felis vel velit porttitor&lt;/p&gt;</code></pre>
+            </details>
+        </section>
+
+        <section class="exercise-section">
+            <h2>📚 Materiali e Risorse</h2>
+            <ul class="resources-list">
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">MDN Web Docs - HTML</a></li>
+                <li><a href="https://www.w3schools.com/html/" target="_blank" rel="noopener noreferrer">W3Schools - HTML Tutorial</a></li>
+                <li><a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">HTML Living Standard</a></li>
+                <li><a href="https://codepen.io/" target="_blank" rel="noopener noreferrer">CodePen - Ambiente di test online</a></li>
+            </ul>
+        </section>
+
+        <nav class="exercise-navigation">
+            <a href="../tema/html.html" class="nav-btn nav-btn-secondary">← Torna agli esercizi HTML</a>
+            <a href="html-esercizio-2.html" class="nav-btn">Prossimo esercizio →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Creato da <span class="signature">Mattia Graziani</span></p>
+    </footer>
+</body>
+</html>

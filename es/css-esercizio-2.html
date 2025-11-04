@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Esercizio CSS 2: Flexbox - layout flessibili e responsive">
+    <title>CSS Esercizio 2 - Flexbox | TW Exercises</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/exercise.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="navbar-brand" href="../index.html">TW Exercises</a>
+            
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            
+            <label for="menu-toggle" class="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../risorse.html">Risorse</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../chat.html">Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="../tema/css.html">CSS</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Esercizio 2</li>
+            </ol>
+        </nav>
+
+        <article class="exercise-header">
+            <h1 class="exercise-title">Esercizio 2: Flexbox Layout</h1>
+            <div class="exercise-meta">
+                <span class="badge-difficulty badge-medio">Medio</span>
+                <span>⏱️ Durata: 60 minuti</span>
+                <span>📚 Prerequisiti: CSS Esercizio 1</span>
+            </div>
+        </article>
+
+        <section class="keywords-section">
+            <h2>Keywords</h2>
+            <div class="keywords-list">
+                <span class="keyword-tag">flex</span>
+                <span class="keyword-tag">flex items</span>
+                <span class="keyword-tag">columns</span>
+                <span class="keyword-tag">rows</span>
+                <span class="keyword-tag">flexbox</span>
+            </div>
+        </section>
+
+        <section class="exercise-section">
+            <h2>🎯 Obiettivi di Apprendimento</h2>
+            <ul class="objectives-list">
+                <li>Comprendere il modello Flexbox</li>
+                <li>Creare un flex container con display: flex</li>
+                <li>Utilizzare flex-direction per controllare la direzione</li>
+                <li>Padroneggiare justify-content e align-items</li>
+                <li>Implementare flex-wrap per layout responsive</li>
+                <li>Usare flex-grow, flex-shrink e flex-basis</li>
+                <li>Creare layout responsive senza media query</li>
+            </ul>
+        </section>
+
+        <section class="exercise-section">
+            <h2>📖 Teoria</h2>
+            
+            <h3>Cos'è Flexbox?</h3>
+            <p>Flexbox (Flexible Box Layout) è un modulo CSS per creare layout flessibili e adattivi. Permette di posizionare elementi in modo fluido all'interno di un contenitore, adattandosi alla dimensione del contenitore e del dispositivo.</p>
+
+            <h3>Concetti Base</h3>
+            <ul>
+                <li><strong>Flex Container</strong>: L'elemento genitore con <code>display: flex</code></li>
+                <li><strong>Flex Items</strong>: Gli elementi figli diretti del container</li>
+                <li><strong>Main Axis</strong>: L'asse principale (orizzontale di default)</li>
+                <li><strong>Cross Axis</strong>: L'asse trasversale (verticale di default)</li>
+            </ul>
+
+            <h3>Proprietà del Container</h3>
+            <pre><code>/* Creare un flex container */
+.container {
+  display: flex;
+}
+
+/* Direzione degli item */
+flex-direction: row | row-reverse | column | column-reverse;
+
+/* Wrapping degli item */
+flex-wrap: nowrap | wrap | wrap-reverse;
+
+/* Allineamento sull'asse principale */
+justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+
+/* Allineamento sull'asse trasversale */
+align-items: stretch | flex-start | flex-end | center | baseline;</code></pre>
+
+            <h3>Proprietà degli Items</h3>
+            <pre><code>/* Crescita proporzionale */
+flex-grow: &lt;numero&gt;; /* default: 0 */
+
+/* Riduzione proporzionale */
+flex-shrink: &lt;numero&gt;; /* default: 1 */
+
+/* Dimensione di base */
+flex-basis: &lt;lunghezza&gt; | auto; /* default: auto */
+
+/* Shorthand */
+flex: &lt;grow&gt; &lt;shrink&gt; &lt;basis&gt;;</code></pre>
+
+            <div class="prerequisites-section">
+                <h3>💡 Suggerimento</h3>
+                <p>Flexbox è perfetto per layout monodimensionali (una riga o una colonna). Per layout bidimensionali complessi, considera CSS Grid.</p>
+            </div>
+        </section>
+
+        <section class="exercise-section">
+            <h2>✏️ Traccia dell'Esercizio</h2>
+            <p>Crea un layout di articoli flessibile e responsive usando Flexbox.</p>
+
+            <h3>HTML fornito:</h3>
+            <pre><code>&lt;header&gt;
+  &lt;h1&gt;Sample flexbox example&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;section&gt;
+  &lt;article&gt;
+    &lt;h2&gt;First article&lt;/h2&gt;
+    &lt;p&gt;Tacos actually microdosing, pour-over semiotics banjo chicharrones 
+    retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&amp;B 
+    pork belly, everyday carry ennui pickled sriracha normcore hashtag 
+    polaroid single-origin coffee cold-pressed. PBR&amp;B tattooed trust fund 
+    twee, leggings salvia iPhone photo booth health goth gastropub hammock.&lt;/p&gt;
+  &lt;/article&gt;
+
+  &lt;article&gt;
+    &lt;h2&gt;Second article&lt;/h2&gt;
+    &lt;p&gt;Tacos actually microdosing, pour-over semiotics banjo chicharrones 
+    retro fanny pack portland everyday carry vinyl typewriter...&lt;/p&gt;
+  &lt;/article&gt;
+
+  &lt;article&gt;
+    &lt;h2&gt;Third article&lt;/h2&gt;
+    &lt;p&gt;Tacos actually microdosing, pour-over semiotics banjo chicharrones 
+    retro fanny pack portland everyday carry vinyl typewriter...&lt;/p&gt;
+  &lt;/article&gt;
+
+  &lt;article&gt;
+    &lt;h2&gt;Fourth article&lt;/h2&gt;
+    &lt;p&gt;Tacos actually microdosing, pour-over semiotics banjo chicharrones 
+    retro fanny pack portland everyday carry vinyl typewriter...&lt;/p&gt;
+  &lt;/article&gt;
+
+  &lt;article&gt;
+    &lt;h2&gt;Fifth article&lt;/h2&gt;
+    &lt;p&gt;Tacos actually microdosing, pour-over semiotics banjo chicharrones 
+    retro fanny pack portland everyday carry vinyl typewriter...&lt;/p&gt;
+  &lt;/article&gt;
+
+  &lt;article&gt;
+    &lt;h2&gt;Sixth article&lt;/h2&gt;
+    &lt;p&gt;Tacos actually microdosing, pour-over semiotics banjo chicharrones 
+    retro fanny pack portland everyday carry vinyl typewriter...&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/section&gt;</code></pre>
+
+            <h3>CSS di partenza:</h3>
+            <pre><code>html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  background: purple;
+  height: 100px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  line-height: 100px;
+  margin: 0;
+}
+
+article {
+  padding: 10px;
+  margin: 10px;
+  background: aqua;
+}</code></pre>
+
+            <h3>Requisiti:</h3>
+            <ol>
+                <li>Trasforma <code>&lt;section&gt;</code> in un flex container</li>
+                <li>Gli articoli devono disporsi in riga quando c'è spazio</li>
+                <li>Ogni articolo deve avere una larghezza minima di 300px</li>
+                <li>Quando non c'è abbastanza spazio, gli articoli devono andare a capo</li>
+                <li>Gli articoli devono crescere per riempire lo spazio disponibile</li>
+            </ol>
+        </section>
+
+        <section class="exercise-section">
+            <h2>💡 Soluzione</h2>
+            <details>
+                <summary>Clicca per vedere la soluzione</summary>
+                <pre><code>html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  background: purple;
+  height: 100px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  line-height: 100px;
+  margin: 0;
+}
+
+/* Flex container */
+section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Flex items */
+article {
+  padding: 10px;
+  margin: 10px;
+  background: aqua;
+  flex: 1 1 300px; /* grow shrink basis */
+}
+
+/* Spiegazione:
+   - flex: 1 1 300px significa:
+   - flex-grow: 1 (cresci per riempire spazio)
+   - flex-shrink: 1 (riduci se necessario)
+   - flex-basis: 300px (larghezza base di 300px)
+   
+   Con flex-wrap: wrap, quando un articolo non può 
+   mantenere i 300px minimi, va a capo automaticamente.
+*/</code></pre>
+
+                <h3>Variante con media query:</h3>
+                <pre><code>/* Soluzione alternativa più esplicita */
+section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+}
+
+article {
+  flex: 1 1 calc(33.333% - 20px);
+  min-width: 300px;
+  padding: 10px;
+  background: aqua;
+  box-sizing: border-box;
+}
+
+/* Su schermi piccoli */
+@media (max-width: 768px) {
+  article {
+    flex: 1 1 100%;
+  }
+}</code></pre>
+            </details>
+        </section>
+
+        <section class="exercise-section">
+            <h2>🚀 Sfida Extra</h2>
+            <p>Una volta completato l'esercizio base, prova questi miglioramenti:</p>
+            <ol>
+                <li>Usa <code>justify-content</code> per centrare gli articoli</li>
+                <li>Aggiungi <code>gap</code> invece di margin per spaziare gli articoli</li>
+                <li>Crea un layout dove il primo articolo occupa l'intera larghezza</li>
+                <li>Usa <code>order</code> per cambiare l'ordine degli articoli</li>
+                <li>Aggiungi <code>align-items: stretch</code> per articoli di altezza uguale</li>
+            </ol>
+        </section>
+
+        <section class="exercise-section">
+            <h2>📚 Materiali e Risorse</h2>
+            <ul class="resources-list">
+                <li><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox" target="_blank" rel="noopener noreferrer">MDN - Flexbox</a></li>
+                <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="noopener noreferrer">CSS-Tricks - Complete Guide to Flexbox</a></li>
+                <li><a href="https://flexboxfroggy.com/" target="_blank" rel="noopener noreferrer">Flexbox Froggy - Gioco interattivo</a></li>
+                <li><a href="https://www.w3schools.com/css/css3_flexbox.asp" target="_blank" rel="noopener noreferrer">W3Schools - CSS Flexbox</a></li>
+            </ul>
+        </section>
+
+        <nav class="exercise-navigation">
+            <a href="css-esercizio-1.html" class="nav-btn nav-btn-secondary">← Esercizio precedente</a>
+            <a href="../tema/css.html" class="nav-btn">Torna agli esercizi CSS →</a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>Creato da <span class="signature">Mattia Graziani</span></p>
+    </footer>
+</body>
+</html>
