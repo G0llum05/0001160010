@@ -278,6 +278,7 @@ details[open] summary {
 }
 
 /* Responsive adjustments */
+/* Mobile: < 768px (--breakpoint-md) */
 @media (max-width: 767px) {
   .exercise-meta {
     flex-direction: column;
@@ -294,12 +295,14 @@ details[open] summary {
   }
 }
 
+/* Tablet: >= 768px (--breakpoint-md) */
 @media (min-width: 768px) {
   .exercise-title {
     font-size: calc(2rem + 1vw);
   }
 }
 
+/* Desktop: >= 1024px (--breakpoint-lg) */
 @media (min-width: 1024px) {
   .exercise-section {
     padding: calc(var(--space-3) * 1.5);
