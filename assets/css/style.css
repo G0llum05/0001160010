@@ -297,6 +297,14 @@ footer {
   opacity: 0.8;
 }
 
+/* Sidebar for theme pages */
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
 .exercise-nav-controls {
   display: flex;
   gap: var(--space-1);
@@ -341,14 +349,19 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   .badge,
   .btn,
-  .card {
+  .card,
+  .exercise-nav-btn,
+  .exercise-nav-link {
     animation: none;
+    transition: none;
   }
   
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  .card:hover {
+    transform: none;
+  }
+  
+  .exercise-nav-btn:hover {
+    transform: none;
   }
 }
 
