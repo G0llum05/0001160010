@@ -42,6 +42,11 @@ main {
   justify-content: space-between;
 }
 
+.card-body {
+  height: calc(22rem - var(--space-2) * 2); /* Adjusted fixed height for consistent cards */
+  overflow-y: auto; /* Add scroll for overflowing content */
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
