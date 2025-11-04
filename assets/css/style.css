@@ -260,22 +260,6 @@ footer {
   flex-wrap: wrap;
 }
 
-.exercise-nav-theme label {
-  color: var(--background-color);
-  font-weight: 600;
-  margin: 0;
-}
-
-.exercise-nav-theme select {
-  padding: calc(var(--space-1) / 2) var(--space-1);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--background-color);
-  background-color: var(--background-color);
-  color: var(--primary-color);
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-
 .exercise-nav-theme-text {
   color: var(--background-color);
   font-weight: 600;
@@ -353,7 +337,12 @@ table .badge {
   .exercise-nav-btn,
   .exercise-nav-link {
     animation: none;
-    transition: none;
+  }
+  
+  .card,
+  .exercise-nav-btn,
+  .exercise-nav-link {
+    transition-property: opacity, color, background-color;
   }
   
   .card:hover {
