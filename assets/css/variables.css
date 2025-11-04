@@ -1,26 +1,39 @@
+/** ============================================
+   VARIABLES.CSS - CSS Custom Properties
+   ============================================
+   Centralized design tokens for consistency
+   ============================================ */
+
 :root {
+  /* Color palette */
   --primary-color: #353535ff;
   --secondary-color: #3c6e71ff;
   --background-color: #ffffffff;
   --text-color: #d9d9d9ff;
   --accent-color: #284b63ff;
+  
+  /* Alternative color schemes (commented out) */
   /* --primary-color: #9da4bd; */
   /* --secondary-color: #d6ccc2; */
   /* --background-color: #f5ebe0; */
   /* --text-color: #9da4bd; */
   /* --accent-color: #20201d; */
 
+  /* Spacing scale - used with calc() for flexible layouts */
   --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
 
+  /* Border radius scale */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 1rem;
 
+  /* Shadow scale for depth */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 
+  /* Maximum container width */
   --maxw: 1200px;
 }
