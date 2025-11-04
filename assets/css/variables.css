@@ -1,9 +1,14 @@
 :root {
-  --primary-color: #174a87;
-  --secondary-color: #916e66;
-  --background-color: #a4c1f9;
-  --text-color: #9da4bd;
-  --accent-color: #20201d;
+  --primary-color: #353535ff;
+  --secondary-color: #3c6e71ff;
+  --background-color: #ffffffff;
+  --text-color: #d9d9d9ff;
+  --accent-color: #284b63ff;
+  /* --primary-color: #9da4bd; */
+  /* --secondary-color: #d6ccc2; */
+  /* --background-color: #f5ebe0; */
+  /* --text-color: #9da4bd; */
+  /* --accent-color: #20201d; */
 
   --space-1: 0.5rem;
   --space-2: 1rem;
