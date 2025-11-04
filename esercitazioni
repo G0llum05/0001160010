@@ -1,0 +1,685 @@
+HTML ESERCIZZI
+
+
+Esercizio 1: Introduzione
+
+Keywords: HTML, headers, paragraphs, lists, text decoration
+
+Per fare pratica con HTML possiamo usare varie risorse online, ad esempio Codepen, W3School etc. Useremo spesso Codepen per fare pratica con CSS, dato che fornisce un ambiente molto comodo sia per testare che per trarre ispirazione dai lavori altrui.
+
+Per lavorare in locale, VSCode, Notepad++ e Atom sono buone ottime opzioni. Per macOS KomodoEdit o Atom. Usate quella che preferite. Per l'esame, userete in ogni caso Notepad++.
+
+Come documentazione per HTML fate principalmente affidamento a MDN. Potrete consultarla anche durante l'esame scritto, ma è bene fare pratica sin da principio.
+Ripassiamo insieme:
+
+Vedremo insieme gli elementi di HTML più comuni, principalmente utilizzati per dare una struttura a contenuti testuali. Sono elementi tipografici: con questi possiamo rendere sul web titoli, paragrafi, liste per suddividere un documento. Oltre gli elementi di layout, abbiamo degli elementi che possono dare uno stile diverso al testo.
+Alcuni elementi di layout
+
+    L'elemento <h*> rappresenta un'intestazione di livello * (da 1 a 6).
+    L'elemento <p> rappresenta un paragrafo di testo.
+    L'elemento <a> rappresenta un collegamento ipertestuale. L'attributo href specifica l'URL di destinazione.
+    L'elemento <ul> rappresenta una lista non ordinata (bullet point), ovvero una lista di elementi che non hanno un ordine specifico.
+    L'elemento <ol> rappresenta una lista ordinata, ovvero una lista di elementi che hanno un ordine specifico (.1, .2, .3...).
+    Ogni elemento delle liste è rappresentato dall'elemento <li>.
+
+Alcuni elementi di stile
+
+    Elemento <strong> (semantico) oppure <b> (grafico)
+    Elemento <em> (semantico) oppure <i> (grafico)
+    Elemento <u>
+    Elemento <s>
+
+Esercizio di oggi
+
+Riproduciamo insieme il testo che vediamo qui sotto. Vedremo insieme la soluzione tra 10 minuti.
+
+    <h1>Titolo principale</h1>
+    <p><strong>Lorem ipsum dolor sit amet</strong>, consectetur adipiscing elit.</p>
+    <h2>Titolo secondario</h2>
+    <ul>
+      <li><em>Lorem ipsum dolor sit amet</em>, consectetur adipiscing elit</li>
+      <li><u>Vestibulum ultricies est ac tellus</u> aliquam malesuada</li>
+      <li>Sed et lacus quam. <s>Nam facilisis sapien risus</s>, vel egestas nibh.</li>
+    </ul>
+    <p>Donec a turpis commodo. Vestibulum ante ipsum primis in faucibus orci luctus</p>
+    <ol>
+      <li><a href="#">Vivamus aliquet felis vel velit porttitor</a></li>
+      <li><a href="#">In ultricies massa rhoncus</a></li>
+      <li><a href="#">Nunc pharetra purus sapien</a></li>
+    </ol>
+    <p>Fusce a luctus nulla. Vivamus aliquet felis vel velit porttitor</p>
+    
+
+
+
+
+Esercizio 2: Tabelle
+
+Keywords: tables, columns, cells
+
+In HTML, le tabelle sono utilizzate per organizzare e visualizzare i dati in una forma tabulare. Una tabella è composta da righe (tr) e colonne (td), con un'opzionale riga di intestazione (th) per identificare i nomi delle colonne.
+
+    tr == table row, ovvero riga; definendo una table row, si aggiunge una riga alla tabella
+    th == table header, ovvero testata; definendo una th, definite i titoli di ogni colonna
+    td == table data; ogni td equivale ad una singola cella; più le td, più le colonne che occuperete per quella riga
+
+Per cui, se io ho una tabella con quattro th, definirò una tabella di quattro colonne. Ogni tr dovrà quindi avere un td per ogni colonna. Oltre questi, esistono anche colonne, attributi e molto altro ancora.
+
+    colgroup == definisce il numero di colonne
+    col == per ogni col in un colgroup aggiungiamo una colonna alla nostra tabella
+    colspan == attributo di un th/td; definisce quante colonne occupa un tr o un td
+    rowspan == attributo di un td; definisce quante righe occupa una cella
+
+Nome 	Cognome 	Età
+Mario 	Rossi 	35
+Giovanna 	Bianchi 	28
+
+        <table>
+            <thead>
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Età</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Mario</td>
+                <td>Rossi</td>
+                <td>35</td>
+            </tr>
+            <tr>
+                <td>Giovanna</td>
+                <td>Bianchi</td>
+                <td>28</td>
+            </tr>
+            </tbody>
+        </table> 
+        
+
+Ripassiamo insieme:
+
+La tabella sotto è composta da:
+
+    un thead, con dentro un tr e due th (Elemento, Funzione)
+    un tbody, con dentro varie tr, ed ognuna due td (elemento a sx, descrizione a dx)
+
+
+Elemento 	Funzione
+<table> 	Apre e chiude una tabella
+<th> 	Definisce le header della tabella
+<tr> 	Definisce le row della tabella
+rowspan 	Attributo di <tr>; definisce quante righe della tabella ricopre una cella
+<td> 	Definisce una cella; all'interno di una tr, ogni td comporrà un singola cella in orizzontale
+<caption> 	Elemento che può essere aggiunto ad una tabella per aggiungere testo sopra/sotto l'effettiva tabella
+<colgroup> 	Specifica il gruppo dove verranno aggiunte le colonne
+<col> 	Specifica le proprietà di ogni colonna all'interno di un <colgroup>
+colspan 	attributo di <col>; definisce per quante colonne si allarga una singola <col>
+<thead> 	Raggruppa il contenuto dell'header
+<tbody> 	Raggruppa il corpo di una tabella
+<tfoot> 	Raggruppa il footer di una tabella
+
+
+Esercizio di oggi
+
+Riproduciamo insieme la tabella che vediamo qui sotto. Vedremo insieme la soluzione tra 10 minuti.
+     HTML CSS 
+
+    Result
+    Skip Results Iframe
+
+EDIT ON
+
+<style>
+  table, th, td {
+  border: 1px solid black;
+}
+</style>
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Modello</th>
+      <th colspan="3">Prestazioni</th>
+      <th rowspan="2">Prezzo</th>
+    </tr>
+    <tr>
+      <th>Consumo 2</th>
+      <th>Consumo 2</th>
+      <th>Consumo 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Audi A4</td>
+      <td>200 km/h</td>
+      <td>5 persone</td>
+      <td rowspan="2">6 L/100km</td>
+      <td>€ 40.000</td>
+    </tr>
+    <tr>
+      <td>BMW X5</td>
+      <td colspan="2">SUV</td>
+      <td>€ 65.000</td>
+    </tr>
+    <tr>
+      <td>Ford Mustang</td>
+      <td>250 km/h</td>
+      <td>2 persone</td>
+      <td colspan="2">Vendita vietata in Europa</td>
+    </tr>
+  </tbody>
+</table>
+
+table, th, td {
+  border: 1px solid black;
+}
+
+Per l'esercizio aggiungi questo elemento così da mostrare i bordi della tabella:
+
+            table, th, td {
+                border: 1px solid black;
+              }              
+        
+
+                <table>
+                <thead>
+                    <tr>
+                        <th rowspan="2">Modello</th>
+                        <th colspan="3">Prestazioni</th>
+                        <th rowspan="2">Prezzo</th>
+                    </tr>
+                    <tr>
+                        <th>Velocità</th>
+                        <th>Capacità</th>
+                        <th>Consumo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Audi A4</td>
+                        <td>200 km/h</td>
+                        <td>5 persone</td>
+                        <td>6 L/100km</td>
+                        <td>€ 40.000</td>
+                    </tr>
+                    <tr>
+                        <td>BMW X5</td>
+                        <td colspan="2">SUV</td>
+                        <td>8 L/100km</td>
+                        <td>€ 65.000</td>
+                    </tr>
+                    <tr>
+                        <td>Ford Mustang</td>
+                        <td>250 km/h</td>
+                        <td>2 persone</td>
+                        <td colspan="2">Vendita vietata in Europa</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+
+
+
+
+CSS EXERCISES
+
+Esercizio 6: Posizionamento
+
+Keywords: posizione, margine, padding
+Esercizio di posizionamento HTML e CSS
+
+Il posizionamento è un concetto essenziale in CSS che consente di posizionare gli elementi in una posizione precisa sulla pagina web. E' possibile controllare come gli elementi interagiscono tra loro e con il resto del layout della pagina. Ci sono diversi tipi di posizionamento in CSS, tra cui il posizionamento statico, relativo, assoluto, fixed e sticky. Diamo un'occhiata a MDN.
+position: static;
+
+Il posizionamento statico è il posizionamento predefinito per tutti gli elementi HTML. Ciò significa che gli elementi appariranno nell'ordine in cui sono scritti nel codice HTML, senza tener conto degli altri elementi sulla pagina. Come abbiamo provato più volte, semplicemente un elemento si colloca sopra l'altro.
+position: relative;
+
+Il posizionamento relativo consente di spostare un elemento rispetto alla sua posizione originale nel codice HTML. L'elemento viene posizionato secondo il normale flusso del documento e poi spostato rispetto a se stesso in base ai valori di top, right, bottom e left. Lo spostamento non influisce sulla posizione di altri elementi; pertanto, lo spazio concesso all'elemento nel layout di pagina è lo stesso che si avrebbe se la posizione fosse statica.
+position: absolute;
+
+Il posizionamento assoluto consente di posizionare un elemento in una posizione precisa sulla pagina, indipendentemente dagli elementi circostanti. Utile per elementi che devono rimanere in una certa posizione a prescindere dal resto.
+position: fixed;
+
+Il posizionamento fisso è simile al posizionamento assoluto, ma l'elemento rimane in una posizione fissa sullo schermo anche quando l'utente scorre la pagina. Questo è utile per creare barre di navigazione persistenti o altri elementi che devono essere visibili in ogni momento.
+position: sticky;
+
+Il posizionamento sticky è un tipo di posizionamento relativo che consente a un elemento di "aderire" in alto alla schermata quando l'utente scorre oltre di esso. Questo è utile per creare intestazioni o barre di navigazione che devono essere visibili in ogni momento, ma devono anche spostarsi quando l'utente scorre la pagina.
+
+
+Esercizi di oggi:
+Requisiti:
+
+    Avere un account Github
+    Avere un account Codepen (si può accedere anche tramite Github)
+
+Esercizio 1
+
+    Andiamo su Codepen
+    Creiamo un nuovo Pen insieme
+    Copiate e incollate il seguente div nella sezione HTML, il secondo sulla sezione CSS.
+    Usando quattro div, creiamo una "piastrella" quadrata, composta da quattro quadrati.
+
+                <div id="one"></div>
+                <div id="two"></div>
+                <div id="three"></div>
+                <div id="four"></div>
+                
+
+                    div {
+                        height: 50vh;
+                        width: 50vh;
+                        position: absolute;
+                      }
+            
+
+flex model
+
+Esercizio 2
+
+    Andiamo su Codepen
+    Creiamo un nuovo Pen insieme
+    Copiate e incollate il seguente div nella sezione HTML, il secondo sulla sezione CSS.
+    Date un background-color diverso ad ogni div. Tutti quanti dovranno essere visibili utilizzando la position: absolute.
+
+            <div id="one"></div>
+            <div id="two"></div>
+            <div id="three"></div>
+            <div id="four"></div>
+            <div id="five"></div>
+            
+
+            div {
+            height: 20vh;
+            width: 100%;
+            position: absolute;
+            }
+        
+
+flex model
+
+
+Esercizio 3
+
+    Andiamo su Codepen
+    Creiamo un nuovo Pen insieme
+    Copiate e incollate il seguente div nella sezione HTML, il secondo sulla sezione CSS.
+    Date un background-color diverso ad ogni div. Tutti quanti dovranno essere visibili utilizzando la position: absolute.
+
+            <div id="one"></div>
+            <div id="two"></div>
+            <div id="three"></div>
+            <div id="four"></div>
+            <div id="five"></div>
+            <div id="six"></div>
+            
+
+            div {
+            position: absolute;
+            }
+        
+
+flex model
+
+
+
+
+Esercizio 7: Flexbox
+
+Keywords: flex, flex items, columns, rows
+Ripassiamo insieme:
+
+Flexbox (Flexible Box Layout) è un modulo CSS che ci consente di creare layout flessibili e adattivi. In altre parole, ci permette di posizionare gli elementi HTML in modo fluido all'interno di un contenitore, adattandosi alla dimensione del contenitore e del dispositivo dell'utente.
+
+Il concetto chiave di Flexbox è la creazione di un "container" (contenitore) che contiene uno o più "flex item" (elementi flessibili). Il contenitore ha diverse proprietà CSS che ci permettono di definire la direzione dei flex item, l'allineamento, lo spaziamento e altre opzioni di layout. I flex item, a loro volta, possono avere diverse proprietà CSS che ci permettono di definire la loro grandezza, ordine, allineamento e altre proprietà.
+flex model
+Flexbox
+
+Ecco una lista delle proprietà principali:
+
+    display: flex;: specifica il container dei flex-items.
+    flex-grow: <number>;: specifica quanto un flex-item deve ingrandire.
+    flex-shrink: <number>;: quanto un flex-item deve rimpicciolire.
+    flex-basis: <dimensione>;: specifica la grandezza di base di un flex-item.
+    flex: <flex-grow> <flex-shrink> <flex-basis>;: una singola proprietà per tutte e tre le precedenti.
+    flex-direction: row/column;: Imposta la direzione principale dei flex item all'interno del contenitore. row (predefinita) imposta la direzione da sinistra a destra (orizzontale), mentre column imposta la direzione dall'alto in basso (verticale).
+    align-items: stretch/flex-start/flex-end/center/baseline;: Imposta l'allineamento dei flex item lungo la direzione trasversale del contenitore (opposta alla flex-direction). stretch (predefinito) allunga i flex item per adattarsi all'altezza del contenitore, flex-start allinea i flex item all'inizio del contenitore, flex-end li allinea alla fine, center li allinea al centro, baseline allinea i flex item basandosi sulla loro linea base (il bordo inferiore della prima riga di testo all'interno di ogni flex item).
+    justify-content: flex-start/end/center/space-between/space-around;: Imposta l'allineamento dei flex item lungo la direzione principale del contenitore (flex-direction). flex-start (predefinito) allinea i flex item verso l'inizio del contenitore, flex-end li allinea verso la fine, center li allinea al centro, space-between li allinea con uno spazio equidistante tra di loro e space-around li allinea con uno spazio equidistante tra di loro e agli estremi del contenitore.
+    flex-wrap: nowrap/wrap/wrap-reverse;: Imposta il comportamento di wrapping dei flex item quando superano la larghezza del contenitore. nowrap (predefinito) fa sì che i flex item rimangano su una sola riga, mentre wrap li fa scorrere su più righe. wrap-reverse fa lo stesso di wrap, ma inverte l'ordine delle righe.
+
+
+
+Esercizi di oggi:
+Requisiti:
+
+    Avere un account Codepen (si può accedere anche tramite Github)
+
+Esercizio 1
+
+    Andiamo su Codepen
+    Creiamo un nuovo Pen insieme
+    Copiate il contenuto sotto
+
+<header>
+    <h1>Sample flexbox example</h1>
+</header>
+
+<section>
+    <article>
+    <h2>First article</h2>
+
+    <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+    </article>
+
+    <article>
+    <h2>Second article</h2>
+
+    <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+    </article>
+
+    <article>
+    <h2>Third article</h2>
+
+    <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+    </article>
+
+    <article>
+    <h2>Fourth article</h2>
+
+    <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+    </article>
+
+    <article>
+    <h2>Fifth article</h2>
+
+    <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+    </article>
+
+    <article>
+    <h2>Sixth article</h2>
+
+    <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.<p>
+    </article>
+</section>
+
+Usiamo questo stile di partenza, alla quale dobbiamo aggiungere le proprietà del flexbox per rendere il contenitore un flex-container e gli article dei flex-items. Devono essere tanti blocchi su una singola fila e diventare una colonna unica quando non ci sono almeno 300px per ogni article.
+
+html {
+    font-family: sans-serif;
+    }
+    
+    body {
+    margin: 0;
+    }
+    
+    header {
+    background: purple;
+    height: 100px;
+    }
+    
+    h1 {
+    text-align: center;
+    color: white;
+    line-height: 100px;
+    margin: 0;
+    }
+    
+    article {
+    padding: 10px;
+    margin: 10px;
+    background: aqua;
+    }
+    
+        
+
+
+
+    HTML CSS 
+
+    Result
+    Skip Results Iframe
+
+EDIT ON
+
+<header>
+    <h1>Sample flexbox example</h1>
+</header>
+
+<section>
+    <article>
+    <h2>First article</h2>
+
+    <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+    </article>
+
+    <article>
+    <h2>Second article</h2>
+
+    <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+    </article>
+
+    <article>
+    <h2>Third article</h2>
+
+    <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+    </article>
+
+    <article>
+    <h2>Fourth article</h2>
+
+    <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+    </article>
+
+    <article>
+    <h2>Fifth article</h2>
+
+    <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+    </article>
+
+    <article>
+    <h2>Sixth article</h2>
+
+    <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack
+    </article>
+</section>
+
+
+
+
+
+
+JS EXERCIES
+
+
+
+
+Esercizio 10: JS #1
+
+Keywords: JS basics, arrays, functions
+Rivediamo insieme:
+
+    Booleani
+    For Loops
+    If Statements
+
+Warm up!
+
+Prima di cominciare la lezione effettiva, proviamo qualche esercizio di riscaldamento
+Booleani
+
+I Booleani in JavaScript sono un tipo di dato che possono assumere due valori: true or false. I booleani si usano spesso per controllare lo stato di una condizione, e.g. se un valore è pari a qualcosa, se una certa operazione ha avuto successo, se un utente ha fatto o meno una certa operazione...
+
+var x = true; 
+if (x) {
+    console.log("True")} 
+else {
+    console.log("False")
+}
+
+var x = 3; 
+if (x < 3) {
+    console.log("True")
+} else {
+    console.log("False")
+}
+
+Operatore 	Descrizione 	Comparazione 	Risulato
+== 	equal to 	x == 8 	false
+x == 5 	true
+x == "5" 	true
+=== 	equal value and equal type 	x === 5 	true
+x === "5" 	false
+!= 	not equal 	x != 8 	true
+!== 	not equal value or not equal type 	x !== 5 	false 	
+x !== "5" 	true 	
+x !== 8 	true 	
+> 	greater than 	x > 8 	false
+< 	less than 	x < 8 	true
+>= 	greater than or equal to 	x >= 8 	false
+<= 	less than or equal to 	x <= 8 	true
+If statements
+
+    if specifica che il blocco deve essere eseguito, se una certa condizione è realizzata
+    else specifica che il blocco successivo ad un if-block deve essere eseguito, se la condizione precedente non si è realizzata
+    else if specifica uno o più blocchi aggiuntivi, dopo il primo if
+    switch specifica molteplici blocchi, utile quando servono molti if-else
+
+if (condition) {
+    //  block of code to be executed if the condition is true
+    } else {
+    //  block of code to be executed if the condition is false
+    }
+
+For Loops
+
+Il for loop si usa per eseguire ripetutamente un singolo blocco finché una certa condizione non è soddisfatta.
+
+for (initialization; condition; increment) {
+// code to be executed
+}
+
+    Initialization: valore iniziale del loop. Non si azzera dopo l'iterazione, viene usata come variabile di partenza per condizione e incremento.
+    Condition: booleano che viene controllato ad ogni loop. Se vero, il loop continua, altrimenti viene terminato.
+    Increment: variabile incrementata ad ogni iterazione; di solito si usa la variabile inizializzata
+    Codice: tutto quello che deve essere eseguito mentre il loop è attivo.
+
+for (var i = 0; i < 10; i++) {
+console.log(i);
+}
+
+Variabile: i = 0; la condizione deve essere true per essere eseguita, ovvero finché i è inferiore a 10; ad ogni iterazione, i aumenterà di 1. Il codice quindi stamperà sulla console tutti i numeri tra i e 9. Per gli incrementi, operatori matematici etc consultare W3 o MDN
+
+
+Esercizio 1
+
+Creiamo una funzione che ritorna n numeri di Fibonacci:
+
+    Se l'input è uguale a 1, output = [0]
+    Se uguale a 2, output = [0,1]
+    Se maggiore di 2, output = [0, 1, ...] dove ogni numero successivo è pari a = (penultimo numero dell'array) + (ultimo numero dell'array)
+
+Esercizio 2
+
+Creiamo un input e un bottone per creare fibonacci(n).
+
+    Crea un elemento input id="input", un bottone con onclick="", e un p con id="output"
+    Dichiara una funzione displayFibonacci()
+        Quando chiamata, prende il valore di #input
+        Chiama a sua volta fibonacci(n) con il valore di #input come parametro
+        Il risultato va poi mostrato, con .innerHTML, nel p #output.
+
+
+
+
+Esercizio 11: JS #2
+
+Keywords: DOM, Math.random
+Rivediamo insieme:
+
+    ID
+    DOM
+    Percorsi, immagini, link
+    Libreria Math
+
+DOM
+
+Il DOM (Document Object Model) è una rappresentazione della struttura di un documento HTML che può essere manipolata, ad esempio tramite JS.
+
+Caricando una pagina sul browser, quest'ultimo crea un albero DOM che ne rappresenta la struttura. represents the page's structure. L'albero è costituito da nodi, ogni nodo rappresenta un elemento della pagina come un paragrafo, un'immagine, o un bottone etc. I nodi, come e.g. un div, possono avere dei nodi figli, ovvero gli elementi contenuti all'interno di quell'elemento. Per capirci, qualunque elemento dentro body è un "figlio" di body. Tramite JS possiamo cambiare il contenuto, l'aspetto, il comportamento di un elemento in maniera dinamica. For example, you can change the text of a paragraph, hide an image, or add a new element to the page.
+
+Alcune delle funzioni DOM più utilizzate sono:
+
+    getElementById(): questa funzione viene utilizzata per recuperare un elemento dalla pagina tramite il suo attributo ID univoco.
+    addEventListener("azione", miaFunzione);: questa funzione viene utilizzata per aggiungere un "ascoltatore" ad un elemento (o all'intero documento) e attivare una funzione dopo che l'azione specificata si verifica.
+    document.querySelector("elemento/elemento per classe/elemento per ID");: restituisce il primo elemento che corrisponde alla descrizione.
+    document.querySelectorAll("elemento/elemento per classe/elemento per ID");: restituisce tutti gli elementi (come una lista di nodi) che corrispondono alla descrizione.
+    setAttribute(nome, valore): imposta l'attributo (nome) di un elemento al valore specificato.
+    innerHTML: metodo per modificare il testo all'interno di un elemento già selezionato.
+
+La libreria Math
+
+Math è un oggetto integrato che ha proprietà e metodi per costanti e funzioni matematiche. Non è un oggetto funzione.
+
+Math funziona con il tipo Number.
+
+Math.random() è una funzione integrata di JavaScript che restituisce un numero in virgola mobile casuale compreso tra 0 e 1 (escluso 1).
+
+La funzione genera un numero pseudo-casuale utilizzando un algoritmo.
+
+Ecco un esempio di utilizzo di Math.random():
+
+let randomNumber = Math.random();
+console.log(randomNumber);
+///e.g. 0.252
+
+Per generare interi casuali all'interno di un intervallo specifico, è possibile combinare Math.random() con altre funzioni matematiche come Math.floor() o Math.ceil(). Ad esempio, il codice seguente genererà un numero intero casuale compreso tra 1 e 10 (inclusi):
+
+let randomInteger = Math.floor(Math.random() * 10) + 1;
+console.log(randomInteger);
+//e.g. 2
+
+La funzione Math.floor() arrotonda verso il basso il risultato di Math.random() * 10 al numero intero più vicino, quindi aggiungiamo 1 per spostare l'intervallo da 0-9 a 1-10. La funzione console.log() stamperà quindi questo numero intero casuale sulla console.
+
+
+Esercizio di oggi:
+Preparazione:
+
+Scaricate lo zip di partenza:
+Download
+
+    Unzip
+    Aprite la cartella nell'editor
+
+Parte 1
+
+Creiamo una variabile con un valore tra 1-6:
+
+    Inizializzare una var
+    Usando Math.random e Math.floor(), creiamo una variabile che genera un numero tra 1-6
+    Controlliamo sulla console
+
+Parte 2
+
+Completata la prima parte, creiamo una variabile che genera un percorso diverso per una immagine di un dado.
+
+    var e.g. imagePath
+    Usiamo concatenazione tra stringhe (e.g. "var x = "string" + variable + "string"...)
+
+Parte 3
+
+Facciamo lo stesso per un secondo dado.
+
+Nella pagina dicee.html abbiamo:
+
+<img class="img" src="images/dice6.png">
+
+    Inizializza una variabile per la prima e per la seconda immagine
+    Usando querySelectorAll (con il corretto indice) o querySelector per classe (.img)
+    Cambiamo l'attributo randomicamente al ricaricare la pagina (e.g. images/dice5.png)
+
+Parte 4
+
+Creiamo tre blocchi di codice che gestiscono i tre casi: quando player 1 vince, quando player 2 vince, e quando è patta
+
+    if random1 is greater than random2...
+    Selezioniamo l'h1 e cambiamo il testo con il relativo vincitore
+
+
+
